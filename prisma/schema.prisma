@@ -26,6 +26,8 @@ model Hotel {
   Facilities_id Int
   Facilities    Facilities @relation(fields: [Facilities_id], references: [id])
   review        Review[]
+  bookings      Booking[]
+  rooms         Room[]
   created_at    DateTime   @default(now())
   updated_at    DateTime   @updatedAt
 }
@@ -52,7 +54,7 @@ model Location {
 model Facilities {
   id         Int      @id @default(autoincrement())
   name       String
-  hotel     Hotel[]
+  hotel      Hotel[]
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 }
@@ -80,6 +82,43 @@ model Review {
   Hotel      Hotel  @relation(fields: [Hotel_id], references: [id])
   user_id    Int
   user       User   @relation(fields: [user_id], references: [id])
+}
+
+model Booking {
+  id                Int               @id @default(autoincrement())
+  number_of_people  Int
+  booking_time      DateTime
+  booker_email      String
+  booker_phone      String
+  booker_first_name String
+  booker_last_name  String
+  booker_request    String?
+  hotel_id          Int
+  hotel             Hotel             @relation(fields: [hotel_id], references: [id])
+  rooms            BookingsOnRooms[]
+  created_at        DateTime          @default(now())
+  updated_at        DateTime          @updatedAt
+}
+
+model Room {
+  id         Int               @id @default(autoincrement())
+  seats      Int
+  hotel_id   Int
+  hotel      Hotel             @relation(fields: [hotel_id], references: [id])
+  bookings   BookingsOnRooms[]
+  created_at DateTime          @default(now())
+  updated_at DateTime          @updatedAt
+}
+
+model BookingsOnRooms {
+  booking_id Int
+  booking    Booking  @relation(fields: [booking_id], references: [id])
+  room_id    Int
+  room       Room     @relation(fields: [room_id], references: [id])
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@id([booking_id, room_id])
 }
 
 enum PRICE {
