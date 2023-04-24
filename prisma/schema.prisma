@@ -102,7 +102,7 @@ model Booking {
 
 model Room {
   id         Int               @id @default(autoincrement())
-  seats      Int
+  bed      Int
   hotel_id   Int
   hotel      Hotel             @relation(fields: [hotel_id], references: [id])
   bookings   BookingsOnRooms[]

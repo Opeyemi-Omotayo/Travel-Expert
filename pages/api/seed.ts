@@ -12,7 +12,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   
-  //  await prisma.table.deleteMany();
+    await prisma.room.deleteMany();
   await prisma.review.deleteMany();
   await prisma.items.deleteMany();
   await prisma.hotel.deleteMany();
@@ -1264,22 +1264,22 @@ export default async function handler(
       ],
     });
 
-  //   await prisma.table.createMany({
-  //     data: [
-  //       {
-  //         restaurant_id: vivaanId,
-  //         seats: 4,
-  //       },
-  //       {
-  //         restaurant_id: vivaanId,
-  //         seats: 4,
-  //       },
-  //       {
-  //         restaurant_id: vivaanId,
-  //         seats: 2,
-  //       },
-  //     ],
-  //   });
+    await prisma.room.createMany({
+      data: [
+        {
+        hotel_id: RadissonId,
+        bed: 2
+        },
+        {
+          hotel_id: RadissonId,
+          bed: 2,
+        },
+        {
+          hotel_id: RadissonId,
+          bed: 1,
+        },
+      ],
+    });
 
   res.status(200).json({ name: "hello" });
 }
