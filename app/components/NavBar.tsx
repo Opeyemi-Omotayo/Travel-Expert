@@ -5,6 +5,8 @@ import Link from "next/link";
 import LoginModal from "./LoginModal";
 import { AuthenticationContext } from "../context/AuthContext";
 import useAuth from "../../hooks/useAuth";
+import { AiOutlineUser } from "react-icons/ai";
+
 
 const NavBar = () => {
   const { data, loading } = useContext(AuthenticationContext);
@@ -18,8 +20,9 @@ const NavBar = () => {
       <div>
         {loading ? null : (
           <div className="flex">
-          {data ? (
-            <button className="p-1 px-4 mr-3 text-white bg-blue-400 border rounded" onClick={signout}>SignOut</button>
+          {data ? (<>
+            <button className="p-1 px-4 mr-3 bg-white-400 border rounded text-blue-400" onClick={signout}><AiOutlineUser/> {data.firstName}</button>
+            <button className="p-1 px-4 mr-3 text-white bg-blue-400 border rounded" onClick={signout}>SignOut</button></>
           ) : (
             <>
               <LoginModal isSignin={true} />
@@ -30,6 +33,8 @@ const NavBar = () => {
         )}
       </div>
     </nav>
+
+
   );
 };
 

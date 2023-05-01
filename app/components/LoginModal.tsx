@@ -2,8 +2,6 @@
 
 import React, { useState, useEffect, useContext } from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Input from "./Input";
 import useAuth from "../../hooks/useAuth";
@@ -67,13 +65,15 @@ export default function LoginModal({ isSignin }: { isSignin: boolean }) {
     });
   };
 
+
   const handleClick = () => {
     if (isSignin) {
       signin({ email: inputs.email, password: inputs.password }, handleClose);
     } else {
       signup(inputs, handleClose);
     }
-  }
+  };
+
   return (
     <div>
       <button
@@ -91,8 +91,13 @@ export default function LoginModal({ isSignin }: { isSignin: boolean }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          {loading ? (<div className="py-22 px-2 h-[500px] flex justify-center"><CircularProgress /></div>) : (<div className="p-2 h-[500px]">
-          {error ? (
+        {loading ? (
+            <div className="py-24 px-2 h-[600px] flex justify-center">
+              <CircularProgress />
+            </div>
+          ) : (
+            <div className="p-2 h-[600px]">
+              {error ? (
                 <Alert severity="error" className="mb-4">
                   {error}
                 </Alert>

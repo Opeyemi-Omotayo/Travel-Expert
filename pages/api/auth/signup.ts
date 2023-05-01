@@ -44,7 +44,7 @@ const signup = async (req: NextApiRequest, res: NextApiResponse) => {
     },
     {
       valid: validator.isStrongPassword(password),
-      errorMessage: "Password is invalid",
+      errorMessage: "Password must contain capital letters,small letters,symbol and number",
     },
   ];
 
