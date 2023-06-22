@@ -6,7 +6,7 @@ const Reviews = ({review}: {review: Review[]}) => {
   return (
     <div>
       <h1 className="pb-5 mt-10 text-3xl font-bold mb-7 borber-b">
-        What {review.length} {review.length === 1 ? "person": "people"} are saying
+        What {review.length} {review.length === 1 ? "person is": "people are"} saying
       </h1>
       <div>
         {/* REVIEW CARD */}

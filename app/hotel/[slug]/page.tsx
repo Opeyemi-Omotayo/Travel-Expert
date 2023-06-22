@@ -7,7 +7,7 @@ import Description from "./components/Description";
 import Images from "./components/Images";
 import Reviews from "./components/Reviews";
 import ReservationCard from "./components/ReservationCard";
-import { PrismaClient, Review } from "@prisma/client";
+import { Items, PrismaClient, Review } from "@prisma/client";
 import { notFound } from "next/navigation";
 
 const prisma = new PrismaClient();
@@ -19,6 +19,8 @@ interface Hotel {
   description: string;
   slug: string;
   open_time: string;
+  close_time: string;
+  items: Items[];
   review: Review[]
 }
 
@@ -34,7 +36,9 @@ const fetchHotelBySlug = async (slug: string): Promise<Hotel> => {
       description: true,
       slug: true,
       review: true,
-      open_time: true
+      open_time: true,
+      close_time: true,
+      items: true,
         },
   });
 
@@ -64,7 +68,7 @@ const HotelDetailsPage = async ({
           <Reviews review={hotel.review}/>
         </div>
         <div className="w-[27%] relative text-reg">
-          <ReservationCard  openTime={hotel.open_time}  slug={hotel.slug}/>
+          <ReservationCard  openTime={hotel.open_time}  slug={hotel.slug} closeTime={hotel.close_time} items={hotel.items}/>
         </div>
       </div>
     </React.Fragment>

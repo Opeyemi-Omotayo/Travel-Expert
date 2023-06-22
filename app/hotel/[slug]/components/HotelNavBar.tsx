@@ -8,9 +8,9 @@ const HotelNavBar = ({slug}: {slug: string}) => {
         {" "}
         Overview{" "}
       </Link>
-      <Link href={`/hotel/${slug}/services`} className="mr-7">
+      <Link href={`/hotel/${slug}/rooms`} className="mr-7">
         {" "}
-        Services{" "}
+        Rooms{" "}
       </Link>
     </nav>
   );

@@ -15,7 +15,7 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>
+      <body >
         <main className="w-screen min-h-screen bg-gray-100">
           <AuthContext>
             <main className="m-auto bg-white max-w-screen-2xl">

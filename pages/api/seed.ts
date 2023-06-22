@@ -11,8 +11,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  
-    await prisma.room.deleteMany();
+  await prisma.room.deleteMany();
   await prisma.review.deleteMany();
   await prisma.items.deleteMany();
   await prisma.hotel.deleteMany();
@@ -25,7 +24,11 @@ export default async function handler(
   });
 
   await prisma.facilities.createMany({
-    data: [{ name: "breakfast" }, { name: "free wifi" }, { name: "swimming pool" }],
+    data: [
+      { name: "breakfast" },
+      { name: "free wifi" },
+      { name: "swimming pool" },
+    ],
   });
 
   const locations = await prisma.location.findMany();
@@ -61,8 +64,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/321442000.jpg?k=b57b8bd14783a10193b59a02bdbf9c02e520767c2a4cc55a41a4e3944b7cf510&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/321442000.jpg?k=b57b8bd14783a10193b59a02bdbf9c02e520767c2a4cc55a41a4e3944b7cf510&o=&hp=1",
         ],
-        open_time: "14:30:00.000Z",
-        close_time: "21:30:00.000Z",
+        open_time: "01:30:00.000Z",
+        close_time: "23:30:00.000Z",
         slug: "radisson-blu-anchorage-hotel-lagos",
         location_id: lagosLocationId,
         Facilities_id: poolFacilitiesId,
@@ -70,7 +73,7 @@ export default async function handler(
       {
         name: "Morning Side Suites",
         main_image:
-          "https://cf.bstatic.com/xdata/images/hotel/max1024x…7a266c724d5b4874645c4cedd107a24e870bfd1c7&o=&hp=1",
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/237264677.jpg?k=c7e2358e283c0329c75d0d615c3441e3463b9f0a239280c725dd351b35eb1254&o=&hp=1",
         price: PRICE.CHEAP,
         description:
           "Well situated in Lagos, Morning Side Suites offers air-conditioned rooms with free WiFi, free private parking and room service.",
@@ -80,8 +83,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/204737249.jpg?k=75bcaa955bb74089ff346dcb051ad1531ba2a0ef64eceb44457f9c190417935e&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/237264677.jpg?k=c7e2358e283c0329c75d0d615c3441e3463b9f0a239280c725dd351b35eb1254&o=&hp=1",
         ],
-        open_time: "12:30:00.000Z",
-        close_time: "22:00:00.000Z",
+        open_time: "01:30:00.000Z",
+        close_time: "23:30:00.000Z",
         slug: "morning-side-suites-lagos",
         location_id: lagosLocationId,
         Facilities_id: wifiFacitiliesId,
@@ -99,8 +102,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/439499154.jpg?k=5a4002d4b187631d0df01cb1bd2a0fbed39c5be2ddc584ae13b139e12640e5a7&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/439499111.jpg?k=34203ebdf64935cd0adbc3c0dfd176a3403764d0a8124e0cf0e1f452974b3da9&o=&hp=1",
         ],
-        open_time: "17:30:00.000Z",
-        close_time: "22:00:00.000Z",
+        open_time: "01:30:00.000Z",
+        close_time: "23:30:00.000Z",
         slug: "lagos-marriott-hotel-ikeja",
         location_id: lagosLocationId,
         Facilities_id: poolFacilitiesId,
@@ -118,8 +121,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/422301920.jpg?k=ab9b425ae0c6535bbdb0a100e1f1d6bac2705d6506b5485b3e93b65cd0342828&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/422301921.jpg?k=5b958e4ae2d86b9b63bbabf798a8fb076c1b287e901ca39a36e6fab249a4ce92&o=&hp=1",
         ],
-        open_time: "10:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "exclusive-upscale-1-bedroom-apartment-in-lekki-phase-1-lagos",
         location_id: lagosLocationId,
         Facilities_id: wifiFacitiliesId,
@@ -127,18 +130,18 @@ export default async function handler(
       {
         name: "Four Points by Sheraton Lagos",
         main_image:
-          "https://cf.bstatic.com/xdata/images/hotel/square200/29845456.webp?k=affa1a07b0bb2c29ddd3723dd5e0a9f925294cd324ff9aaade2d3fd6d506e612&o=&s=1",
+          "https://cf2.bstatic.com/xdata/images/hotel/max1024x768/465657751.jpg?k=28298fc376469b841464f5f22e497afbd946eae257c1a15a9bed6a3d9b664db4&o=&hp=1",
         price: PRICE.EXPENSIVE,
         description:
           "Boasting a terrace and a bar, Four Points by Sheraton Lagos is attractively set in the heart of Lagos, 2 km from Nike Art Gallery.",
         images: [
-          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/29845456.jpg?k=32edb1ff2e320a1c70d40e7ba7df6d9e1c2a825254f407bcd91e70b00e244b83&o=&hp=1",
-          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/411446249.jpg?k=f539520bbfeb082c6e2baa92a3b8c961892a003a45b82dc5699fb99bfc07fe18&o=&hp=1",
-          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/29845443.jpg?k=83f4136c916c28786753f4d318c091c7fed8726772b8d94e80c9ea747a99555c&o=&hp=1",
-          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/29845460.jpg?k=fedea4e3e15bc26c8cab53666a336838acb2db0786aed8d9ddb6be3b74abb19a&o=&hp=1",
+          "https://cf2.bstatic.com/xdata/images/hotel/max1024x768/465657751.jpg?k=28298fc376469b841464f5f22e497afbd946eae257c1a15a9bed6a3d9b664db4&o=&hp=1",
+          "https://cf2.bstatic.com/xdata/images/hotel/max1024x768/465657804.jpg?k=ffb67baca37bc553c0ff8155e180e1d921b87e9693855a32618861ee232b1963&o=&hp=1",
+          "https://cf2.bstatic.com/xdata/images/hotel/max1024x768/465657816.jpg?k=c548db32ebbf7b2848614c0f43d477ef8978e1c144ed48048f408c4220141b74&o=&hp=1",
+          "https://cf2.bstatic.com/xdata/images/hotel/max1024x768/465657788.jpg?k=04e6f9cf883d53bd066a1d5c9b16e27f12a9f6f88883e9fee6ed1178819032d2&o=&hp=1",
         ],
-        open_time: "16:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "four-points-by-sheraton-lagos",
         location_id: lagosLocationId,
         Facilities_id: breakfastFacilitiesId,
@@ -156,8 +159,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/318324885.jpg?k=d43fc5e57c03aac451de1028d86b47ff5156e324c1006dec3e9e70aafabbbf43&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/318109913.jpg?k=e2a952a7e20573027cae1e03e3082073d4a0b04dbb15e145b29b7d2a15c5a974&o=&hp=1",
         ],
-        open_time: "10:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "nordic-hotel-lagos",
         location_id: lagosLocationId,
         Facilities_id: breakfastFacilitiesId,
@@ -175,8 +178,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/square200/151195997.webp?k=4b0a79799a46cb953dd3fc1f98842ae99af7e511480b28d04bcd7e58ac0e1b84&o=&s=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/346756931.jpg?k=f398cb1815fcf8546b564f36941ff3b9c32e093be9fc7971d83aaee01809338a&o=&hp=1",
         ],
-        open_time: "14:00:00.000Z",
-        close_time: "19:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "the-gilgal-lagos",
         location_id: lagosLocationId,
         Facilities_id: poolFacilitiesId,
@@ -194,8 +197,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/351326082.jpg?k=23355c6ce17a77b313f33fa9750fe8a7849b48a27f056d1ae7732bd764e6704e&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/334787282.jpg?k=ac222070e3dfe33e71a40e5ade2bfe44590c302f8c1d16f923321dbf90b5befa&o=&hp=1",
         ],
-        open_time: "12:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "victoria-crown-plaza-hotel-lagos",
         location_id: lagosLocationId,
         Facilities_id: wifiFacitiliesId,
@@ -214,11 +217,11 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/240180682.jpg?k=d89eeaec75018107158f0169be3cdcc5dca29c251a13dde7bea44aa047dfc8b4&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/218614755.jpg?k=c6747bad716cc36a83a9a16174a8110ae3ef75ec6434950dd3f85184d4f6ff21&o=&hp=1",
         ],
-        open_time: "10:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "transcorp-hilton-abuja ",
         location_id: abujaLocationId,
-       Facilities_id: breakfastFacilitiesId,
+        Facilities_id: breakfastFacilitiesId,
       },
       {
         name: "Best Premier Maitama Residence",
@@ -233,8 +236,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/329537415.jpg?k=e66a1b2ed052219636c17914f81f866398980b5567b71c1e6223efa92280c0e7&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/356092854.jpg?k=981f0359b55aba2e31b014629b9b17779ed323a43da46e55116cf91aaae27b10&o=&hp=1",
         ],
-        open_time: "16:00:00.000Z",
-        close_time: "19:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "best-premier-maitama-residence-abuja",
         location_id: abujaLocationId,
         Facilities_id: wifiFacitiliesId,
@@ -254,8 +257,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/428338407.jpg?k=856733db2528b2151a3d6b3bc0bc219a194945bd803cfbd19dbbc5cf5bc4f70f&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/428338157.jpg?k=14bd935ab6b292d3dabe4d77c54d6dbf3737083e23348e7c19a2e44d684f7986&o=&hp=1",
         ],
-        open_time: "12:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "the-destination-by-gidanka-abuja",
         location_id: abujaLocationId,
         Facilities_id: poolFacilitiesId,
@@ -273,8 +276,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/402101233.jpg?k=f8bf22cdf667ab84c7e6217106af3a4761795745f9b6df3ab202fde20e74e483&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/402102547.jpg?k=67382040f5105c775ce1d7257cc106f534b247c16826a51487b553c3bb7c0576&o=&hp=1",
         ],
-        open_time: "09:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "aveon-hotel-abuja",
         location_id: abujaLocationId,
         Facilities_id: breakfastFacilitiesId,
@@ -292,8 +295,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/407740082.jpg?k=eb91c34e80ac01d50bc436c582f0bc4dfbc2ebdb14ea09531830cc2166fc194d&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/407740079.jpg?k=bc82928f2fc0cc0a983f85cb65583d355c0a9e8a63d8248d82df243080f65b57&o=&hp=1",
         ],
-        open_time: "09:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "mayfair-hotel-wuse2-abuja",
         location_id: abujaLocationId,
         Facilities_id: breakfastFacilitiesId,
@@ -312,8 +315,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/309335511.jpg?k=6f950ff17b3112b094ab1b08db8a367f2c21ce469af4011a77bf852f44d58ac3&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/309282476.jpg?k=99726f0f303f4299406f7bb1a5ac0c3d34c4c07e46c155ca150b55498a6ae89e&o=&hp=1",
         ],
-        open_time: "15:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "e-suite-hotel-abuja",
         location_id: abujaLocationId,
         Facilities_id: breakfastFacilitiesId,
@@ -332,8 +335,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/286521938.jpg?k=6f8f022bd40d5eeb605d94befb339599c0db7eaacdc1c3b2a09e1fdb3f72a4a2&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/287626333.jpg?k=ed3e6cd328708d9b1935bf9cc5c2cfa51908e6d24d53fda84ad0597b8fc09083&o=&hp=1",
         ],
-        open_time: "10:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "residency-hotel-utako-abuja",
         location_id: abujaLocationId,
         Facilities_id: wifiFacitiliesId,
@@ -349,10 +352,10 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/196340483.jpg?k=8ad6be4f6de0c79780cd65183ad33d93369d855040ace073f815fea60ee19229&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/196340533.jpg?k=47e3eaee557a1b11a2bafc153201961a6ea18e456ef5f0e866735338a5181e23&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/196127078.jpg?k=9ca7dcec1c9f47f410b93269412113a768635d7a98c485c850c3e17e7ad080a8&o=&hp=1",
-          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/196126008.jpg?k=8b434d7e4125bd5affbeb08f8c9ff2b56808dcea54750bbd5ecbca383acf7f55&o=&hp=1"
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/196126008.jpg?k=8b434d7e4125bd5affbeb08f8c9ff2b56808dcea54750bbd5ecbca383acf7f55&o=&hp=1",
         ],
-        open_time: "10:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "tranquil-mews-hotel-abuja",
         location_id: abujaLocationId,
         Facilities_id: wifiFacitiliesId,
@@ -371,8 +374,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94964618.jpg?k=28c17243783c0ac1b0d8b2f47daecc05494ab2f5f4bd9a4cd160cc4fe6e5175a&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94964614.jpg?k=a9c7c4265afb5b8dc8d60b07ae5f4943fd9262da4e2c6422145ea830164cb90a&o=&hp=1",
         ],
-        open_time: "13:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "bon-hotel-abuja",
         location_id: abujaLocationId,
         Facilities_id: breakfastFacilitiesId,
@@ -393,8 +396,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/261291783.jpg?k=7f8346c8d33625cbc1fe153a113a7b65122105abe36252ce13ae3e5e2c764899&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/261291674.jpg?k=a25bfe0f7abf2989c809df3cd1d0294edd1a8bf89b52c77ecd2f41a72fc0419a&o=&hp=1",
         ],
-        open_time: "15:00:00.000Z",
-        close_time: "22:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "adis-hotels-ibadan",
         location_id: ibadanLocationId,
         Facilities_id: breakfastFacilitiesId,
@@ -413,8 +416,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/333481452.jpg?k=19b18ecd34f01f05f01f1e954fd1ef0ff4be07c9b696eec139dabbfd6e6bbde9&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/331254870.jpg?k=672f2996ce3c7a9921da2caf38a8a43fabc549302dba6a96e3e849730013dbc1&o=&hp=1",
         ],
-        open_time: "13:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "adis-hotels-prime-ibadan",
         location_id: ibadanLocationId,
         Facilities_id: breakfastFacilitiesId,
@@ -433,11 +436,11 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/324608053.jpg?k=6570cf25c13d6f26f09d69498547f912697013577578b9fae604322f9c24a90e&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/324608060.jpg?k=f3b24adca803740c96a03b31994978f6e31aac5a106eac42011f228741b39629&o=&hp=1",
         ],
-        open_time: "12:00:00.000Z",
-        close_time: "18:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "olympus-hotel-&-suites-ibadan",
         location_id: ibadanLocationId,
-       Facilities_id: poolFacilitiesId,
+        Facilities_id: poolFacilitiesId,
       },
       {
         name: "Eagle Nest",
@@ -455,8 +458,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/436341494.jpg?k=31fe79f600917905bd2ec1c2d3823ed8ccb97b23bb2cfba31ff7ea2f6fe99367&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/436341500.jpg?k=f24740a855abeaea86bc426d0fe2ddcef923092c8870308a4c81fbd56d9a8250&o=&hp=1",
         ],
-        open_time: "09:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "eagle-nest-ibadan",
         location_id: ibadanLocationId,
         Facilities_id: wifiFacitiliesId,
@@ -475,8 +478,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/424865001.jpg?k=9fa624f81dad6dd8c0d413473e94eefda1df638917a19f977300bae5b05a9053&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/422474403.jpg?k=dad9e2cc4f4a953d761e66126f912e46aa8a3b5cc067a557e9b1a2da190ab55b&o=&hp=1",
         ],
-        open_time: "13:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "umbrella-properties-eleyele-ibadan",
         location_id: ibadanLocationId,
         Facilities_id: wifiFacitiliesId,
@@ -495,8 +498,8 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/391047366.jpg?k=9e99325881a9f00eb106722aad3603fe4f67bacfbfad129e75db247f3db9b203&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/391047366.jpg?k=9e99325881a9f00eb106722aad3603fe4f67bacfbfad129e75db247f3db9b203&o=&hp=1",
         ],
-        open_time: "10:00:00.000Z",
-        close_time: "21:00:00.000Z",
+        open_time: "01:00:00.000Z",
+        close_time: "23:00:00.000Z",
         slug: "mondeestars-luxury-home-ibadan",
         location_id: ibadanLocationId,
         Facilities_id: poolFacilitiesId,
@@ -515,7 +518,7 @@ export default async function handler(
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/296203029.jpg?k=24ed3850966a07a4f5dc890aed48a5c5294c2c160a56b7c3f7b32316dba2868c&o=&hp=1",
           "https://cf.bstatic.com/xdata/images/hotel/max1024x768/320390404.jpg?k=f9472d7511262b333e769aeab9dca74672d7ad096ecca8da7fc5c122e969990a&o=&hp=1",
         ],
-        open_time: "07:00:00.000Z",
+        open_time: "01:00:00.000Z",
         close_time: "21:00:00.000Z",
         slug: "ayaakaje-guest-house-ibadan ",
         location_id: ibadanLocationId,
@@ -527,63 +530,58 @@ export default async function handler(
   const hotels = await prisma.hotel.findMany();
 
   const RadissonId =
-    hotels.find((hotel) => hotel.name === "Radisson Blu Anchorage Hotel")
-      ?.id || 1;
+    hotels.find((hotel) => hotel.name === "Radisson Blu Anchorage Hotel")?.id ||
+    1;
   const MorningId =
-    hotels.find((hotel) => hotel.name === "Morning Side Suites")
-      ?.id || 1;
+    hotels.find((hotel) => hotel.name === "Morning Side Suites")?.id || 1;
   const LagosId =
-    hotels.find((hotel) => hotel.name === "Lagos Marriott Hotel Ikeja")
-      ?.id || 1;
+    hotels.find((hotel) => hotel.name === "Lagos Marriott Hotel Ikeja")?.id ||
+    1;
   const ExclusiveId =
-    hotels.find((hotel) => hotel.name === "Exclusive Upscale 1 Bedroom Apartment in Lekki phase 1")
-      ?.id || 1;
+    hotels.find(
+      (hotel) =>
+        hotel.name === "Exclusive Upscale 1 Bedroom Apartment in Lekki phase 1"
+    )?.id || 1;
   const FourId =
     hotels.find((hotel) => hotel.name === "Four Points by Sheraton Lagos")
       ?.id || 1;
   const NordicId =
-    hotels.find((hotel) => hotel.name === "Nordic Hotel Lagos")
-      ?.id || 1;
-  const GilgalId =
-    hotels.find((hotel) => hotel.name === "The GilGal")?.id || 1;
+    hotels.find((hotel) => hotel.name === "Nordic Hotel Lagos")?.id || 1;
+  const GilgalId = hotels.find((hotel) => hotel.name === "The GilGal")?.id || 1;
   const VictorialId =
-    hotels.find((hotel) => hotel.name === "Victoria Crown Plaza Hotel ")?.id || 1;
+    hotels.find((hotel) => hotel.name === "Victoria Crown Plaza Hotel ")?.id ||
+    1;
   const TranscorpId =
-    hotels.find((hotel) => hotel.name === "Transcorp Hilton Abuja")
-      ?.id || 1;
+    hotels.find((hotel) => hotel.name === "Transcorp Hilton Abuja")?.id || 1;
   const BestId =
-    hotels.find((hotel) => hotel.name === "Best Premier Maitama Residence")?.id ||
-    1;
+    hotels.find((hotel) => hotel.name === "Best Premier Maitama Residence")
+      ?.id || 1;
   const DestinationId =
-    hotels.find((hotel) => hotel.name === "The Destination by Gidanka")?.id || 1;
-  const AveonId =
-    hotels.find((hotel) => hotel.name === "Aveon Hotel")?.id || 1;
-  const MayFairId =
-    hotels.find((hotel) => hotel.name === "MayFair Hotel Wuse2 Abuja")?.id ||
+    hotels.find((hotel) => hotel.name === "The Destination by Gidanka")?.id ||
     1;
+  const AveonId = hotels.find((hotel) => hotel.name === "Aveon Hotel")?.id || 1;
+  const MayFairId =
+    hotels.find((hotel) => hotel.name === "MayFair Hotel Wuse2 Abuja")?.id || 1;
   const ESuiteId =
-    hotels.find((hotel) => hotel.name === "E-suite Hotel")
-      ?.id || 1;
+    hotels.find((hotel) => hotel.name === "E-suite Hotel")?.id || 1;
   const ResidencyId =
-    hotels.find((hotel) => hotel.name === "Residency Hotel Utako Abuja")
-      ?.id || 1;
+    hotels.find((hotel) => hotel.name === "Residency Hotel Utako Abuja")?.id ||
+    1;
   const TranquilId =
     hotels.find((hotel) => hotel.name === "Tranquil Mews Hotel")?.id || 1;
   const BONId =
     hotels.find((hotel) => hotel.name === "BON Hotel Abuja")?.id || 1;
-    const AdisHotelId =
+  const AdisHotelId =
     hotels.find((hotel) => hotel.name === "Adis Hotels Ibadan")?.id || 1;
   const AdisPrimeId =
     hotels.find((hotel) => hotel.name === "Adis Hotels Prime")?.id || 1;
   const OlympusId =
-    hotels.find((hotel) => hotel.name === "OLYMPUS HOTEL & SUITES")?.id ||
-    1;
-  const EagleId =
-    hotels.find((hotel) => hotel.name === "Eagle Nest")
-      ?.id || 1;
+    hotels.find((hotel) => hotel.name === "OLYMPUS HOTEL & SUITES")?.id || 1;
+  const EagleId = hotels.find((hotel) => hotel.name === "Eagle Nest")?.id || 1;
   const UmbrellaId =
-    hotels.find((hotel) => hotel.name === "Umbrella properties - Eleyele Ibadan")
-      ?.id || 1;
+    hotels.find(
+      (hotel) => hotel.name === "Umbrella properties - Eleyele Ibadan"
+    )?.id || 1;
   const MondeestarId =
     hotels.find((hotel) => hotel.name === "MONDEESTARS LUXURY HOME")?.id || 1;
   const AyaakayeId =
@@ -593,8 +591,7 @@ export default async function handler(
     data: [
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦125,000",
         Hotel_id: RadissonId,
       },
@@ -606,8 +603,7 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦30,000",
         Hotel_id: RadissonId,
       },
@@ -619,15 +615,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦10,000",
         Hotel_id: MorningId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦102,000",
         Hotel_id: LagosId,
       },
@@ -639,15 +633,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦30,000",
-        Hotel_id: LagosId ,
+        Hotel_id: LagosId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦70,000",
         Hotel_id: ExclusiveId,
       },
@@ -659,15 +651,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦22,000",
-        Hotel_id: ExclusiveId ,
+        Hotel_id: ExclusiveId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦102,000",
         Hotel_id: FourId,
       },
@@ -679,15 +669,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦30,000",
-        Hotel_id: FourId ,
+        Hotel_id: FourId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦70,000",
         Hotel_id: NordicId,
       },
@@ -699,10 +687,9 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦22,000",
-        Hotel_id: NordicId ,
+        Hotel_id: NordicId,
       },
       {
         name: "Executive Room",
@@ -712,15 +699,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦10,000",
         Hotel_id: GilgalId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦102,000",
         Hotel_id: VictorialId,
       },
@@ -732,15 +717,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦30,000",
-        Hotel_id: VictorialId ,
+        Hotel_id: VictorialId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦102,000",
         Hotel_id: TranscorpId,
       },
@@ -752,15 +735,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦30,000",
-        Hotel_id: TranscorpId ,
+        Hotel_id: TranscorpId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦70,000",
         Hotel_id: BestId,
       },
@@ -772,15 +753,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦22,000",
-        Hotel_id: BestId ,
+        Hotel_id: BestId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦102,000",
         Hotel_id: DestinationId,
       },
@@ -792,10 +771,9 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦30,000",
-        Hotel_id: DestinationId ,
+        Hotel_id: DestinationId,
       },
       {
         name: "Executive Room",
@@ -805,8 +783,7 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦10,000",
         Hotel_id: AveonId,
       },
@@ -818,15 +795,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦10,000",
         Hotel_id: MayFairId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦102,000",
         Hotel_id: ESuiteId,
       },
@@ -838,15 +813,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦30,000",
-        Hotel_id: ESuiteId ,
+        Hotel_id: ESuiteId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦70,000",
         Hotel_id: ResidencyId,
       },
@@ -858,15 +831,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦22,000",
-        Hotel_id: ResidencyId ,
+        Hotel_id: ResidencyId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦70,000",
         Hotel_id: TranquilId,
       },
@@ -878,15 +849,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦22,000",
-        Hotel_id: TranquilId ,
+        Hotel_id: TranquilId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦70,000",
         Hotel_id: BONId,
       },
@@ -898,10 +867,9 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦22,000",
-        Hotel_id: BONId ,
+        Hotel_id: BONId,
       },
       {
         name: "Executive Room",
@@ -911,15 +879,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦10,000",
         Hotel_id: AdisHotelId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦70,000",
         Hotel_id: AdisPrimeId,
       },
@@ -931,15 +897,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦22,000",
-        Hotel_id: AdisPrimeId ,
+        Hotel_id: AdisPrimeId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦102,000",
         Hotel_id: OlympusId,
       },
@@ -951,15 +915,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦30,000",
-        Hotel_id: OlympusId ,
+        Hotel_id: OlympusId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦70,000",
         Hotel_id: EagleId,
       },
@@ -971,15 +933,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦22,000",
-        Hotel_id: EagleId ,
+        Hotel_id: EagleId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦70,000",
         Hotel_id: UmbrellaId,
       },
@@ -991,15 +951,13 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦22,000",
-        Hotel_id: UmbrellaId ,
+        Hotel_id: UmbrellaId,
       },
       {
         name: "Presidential Suite",
-        description:
-          "2 extra-large double bed with free wifi and breakfast",
+        description: "2 extra-large double bed with free wifi and breakfast",
         price: "₦102,000",
         Hotel_id: MondeestarId,
       },
@@ -1011,10 +969,9 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦30,000",
-        Hotel_id: MondeestarId ,
+        Hotel_id: MondeestarId,
       },
       {
         name: "Executive Room",
@@ -1024,262 +981,439 @@ export default async function handler(
       },
       {
         name: "Deluxe Room",
-        description:
-          "1 double bed with free wifi",
+        description: "1 double bed with free wifi",
         price: "₦10,000",
         Hotel_id: AyaakayeId,
       },
-      
     ],
   });
 
-    const userOpeyemi = await prisma.user.create({
-      data: {
+  const userOpeyemi = await prisma.user.create({
+    data: {
+      first_name: "Opeyemi",
+      last_name: "Omotayo",
+      email: "ope@gmail.com",
+      city: "Lagos",
+      password: "$2b$10$I8xkU2nQ8EAHuVOdbMy9YO/.rSU3584Y.H4LrpIujGNDtmny9FnLu",
+      phone: "1112223333",
+    },
+  });
+
+  const userJosh = await prisma.user.create({
+    data: {
+      first_name: "Josh",
+      last_name: "Adeoye",
+      email: "josh@gmail.com",
+      city: "Abuja",
+      password: "$2b$10$I8xkU2nQ8EAHuVOdbMy9YO/.rSU3584Y.H4LrpIujGNDtmny9FnLu",
+      phone: "1112223333",
+    },
+  });
+
+  const userYemi = await prisma.user.create({
+    data: {
+      first_name: "Yemi",
+      last_name: "James",
+      email: "Yemi@gmail.com",
+      city: "Ibadan",
+      password: "$2b$10$I8xkU2nQ8EAHuVOdbMy9YO/.rSU3584Y.H4LrpIujGNDtmny9FnLu",
+      phone: "1112223333",
+    },
+  });
+
+  await prisma.review.createMany({
+    data: [
+      {
         first_name: "Opeyemi",
         last_name: "Omotayo",
-        email: "ope@gmail.com",
-        city: "Lagos",
-        password: "$2b$10$I8xkU2nQ8EAHuVOdbMy9YO/.rSU3584Y.H4LrpIujGNDtmny9FnLu",
-        phone: "1112223333",
+        text: "This place is amazing,everything is perfect. It is so so so good!!!",
+        rating: 5,
+        Hotel_id: RadissonId,
+        user_id: userOpeyemi.id,
       },
-    });
-
-    const userJosh = await prisma.user.create({
-      data: {
+      {
         first_name: "Josh",
         last_name: "Adeoye",
-        email: "josh@gmail.com",
-        city: "Abuja",
-        password: "$2b$10$I8xkU2nQ8EAHuVOdbMy9YO/.rSU3584Y.H4LrpIujGNDtmny9FnLu",
-        phone: "1112223333",
+        text: "This place is so good! It is the fanciest place I have ever been in my life",
+        rating: 5,
+        Hotel_id: LagosId,
+        user_id: userJosh.id,
       },
-    });
-
-    const userYemi = await prisma.user.create({
-      data: {
+      {
         first_name: "Yemi",
         last_name: "James",
-        email: "Yemi@gmail.com",
-        city: "Ibadan",
-        password: "$2b$10$I8xkU2nQ8EAHuVOdbMy9YO/.rSU3584Y.H4LrpIujGNDtmny9FnLu",
-        phone: "1112223333",
+        text: "Excellent food and service. Busy night, but everything was great! Highly recommend.",
+        rating: 5,
+        Hotel_id: MorningId,
+        user_id: userYemi.id,
       },
-    });
-
-
-    await prisma.review.createMany({
-      data: [
-        {
-          first_name: "Opeyemi",
+      {
+        first_name: "Opeyemi",
         last_name: "Omotayo",
-          text: "This place is amazing,everything is perfect. It is so so so good!!!",
-          rating: 5,
-          Hotel_id: RadissonId,
-          user_id: userOpeyemi.id,
-        },
-        {
-          first_name: "Josh",
-          last_name: "Adeoye",
-          text: "This place is so good! It is the fanciest place I have ever been in my life",
-          rating: 5,
-          Hotel_id: LagosId,
-          user_id: userJosh.id,
-        },
-        {
-          first_name: "Yemi",
-        last_name: "James",
-          text: "Excellent food and service. Busy night, but everything was great! Highly recommend.",
-          rating: 5,
-          Hotel_id: MorningId,
-          user_id: userYemi.id,
-        },
-        {
-          first_name: "Opeyemi",
-        last_name: "Omotayo",
-          text: "Very nice place for a date night, the service was fast and friendly. The food was amazing.",
-          rating: 4,
-          Hotel_id: ExclusiveId,
-          user_id: userOpeyemi.id,
-        },
-        {
-          first_name: "Josh",
-          last_name: "Adeoye",
-          text: "The place is okay",
-          rating: 2,
-          Hotel_id: FourId,
-          user_id: userJosh.id,
-        },
-        {
-          first_name: "Yemi",
-        last_name: "James",
-          text: "This place is amazing, it has some of the best services in the world. It is so so so good!!!",
-          rating: 5,
-          Hotel_id: NordicId,
-          user_id: userYemi.id,
-        },
-        {
-          first_name: "Opeyemi",
-        last_name: "Omotayo",
-          text: "As always, food was excellent. ",
-          rating: 5,
-          Hotel_id: GilgalId,
-          user_id: userOpeyemi.id,
-        },
-        {
-          first_name: "Josh",
-          last_name: "Adeoye",
-          text: "Nice place to go to",
-          rating: 3,
-          Hotel_id: VictorialId,
-          user_id: userJosh.id,
-        },
-        {
-          first_name: "Yemi",
-        last_name: "James",
-          text: "very cozy",
-          rating: 4,
-          Hotel_id: TranscorpId,
-          user_id: userYemi.id,
-        },
-        {
-          first_name: "Opeyemi",
-        last_name: "Omotayo",
-          text: "i love the room service",
-          rating: 5,
-          Hotel_id: BestId,
-          user_id: userOpeyemi.id,
-        },
-        {
-          first_name: "Josh",
-          last_name: "Adeoye",
-          text: "Had a great time there",
-          rating: 3,
-          Hotel_id: DestinationId,
-          user_id: userJosh.id,
-        },
-        {
-          first_name: "Yemi",
-          last_name: "James",
-          text: "Not bad",
-          rating: 3,
-          Hotel_id: AveonId,
-          user_id: userYemi.id,
-        },
-        {
-          first_name: "Opeyemi",
-        last_name: "Omotayo",
-          text: "Wonderful food and service.",
-          rating: 5,
-          Hotel_id: MayFairId,
-          user_id: userOpeyemi.id,
-        },
-        {
-          first_name: "Josh",
-          last_name: "Adeoye",
-          text: "Great staff, great room service. ",
-          rating: 5,
-          Hotel_id: ESuiteId,
-          user_id: userJosh.id,
-        },
-        {
-          first_name: "Yemi",
-          last_name: "James",
-          text: "Wonderful service! Delicious food! Comfortable seating and luxurious atmosphere.",
-          rating: 5,
-          Hotel_id: ResidencyId,
-          user_id: userYemi.id,
-        },
-        {
-          first_name: "Opeyemi",
-        last_name: "Omotayo",
-          text: "Not bad",
-          rating: 4,
-          Hotel_id: TranquilId,
-          user_id: userOpeyemi.id,
-        },
-        {
-          first_name: "Josh",
-          last_name: "Adeoye",
-          text: "This visit was with a friend who had never been here before. She loved it as much as I do. She said it will be our new go to place!",
-          rating: 4,
-          Hotel_id: BONId,
-          user_id: userJosh.id,
-        },
-        {
-          first_name: "Yemi",
-          last_name: "James",
-          text: "Great atmosphere",
-          rating: 5,
-          Hotel_id: AdisHotelId,
-          user_id: userYemi.id,
-        },
-        {
-          first_name: "Opeyemi",
-        last_name: "Omotayo",
-          text: "Very nice evening spent with special family.",
-          rating: 5,
-          Hotel_id: AdisPrimeId,
-          user_id: userOpeyemi.id,
-        },
-        {
-          first_name: "Josh",
+        text: "Very nice place for a date night, the service was fast and friendly. The food was amazing.",
+        rating: 4,
+        Hotel_id: ExclusiveId,
+        user_id: userOpeyemi.id,
+      },
+      {
+        first_name: "Josh",
         last_name: "Adeoye",
-          text: "First time, and not the last. Very welcoming. The food was deliscious and service very good. Highly recommend.",
-          rating: 4,
-          Hotel_id: OlympusId,
-          user_id: userJosh.id,
-        },
-        {
-          first_name: "Yemi",
-          last_name: "James",
-          text: "Enjoyed our stay there. Great service and ambience.",
-          rating: 5,
-          Hotel_id: EagleId,
-          user_id: userYemi.id,
-        },
-        {
-          first_name: "Opeyemi",
+        text: "The place is okay",
+        rating: 2,
+        Hotel_id: FourId,
+        user_id: userJosh.id,
+      },
+      {
+        first_name: "Yemi",
+        last_name: "James",
+        text: "This place is amazing, it has some of the best services in the world. It is so so so good!!!",
+        rating: 5,
+        Hotel_id: NordicId,
+        user_id: userYemi.id,
+      },
+      {
+        first_name: "Opeyemi",
         last_name: "Omotayo",
-          text: "We had such a great experience and our server was top notch. ",
-          rating: 4,
-          Hotel_id: UmbrellaId,
-          user_id: userOpeyemi.id,
-        },
-        {
-          first_name: "Josh",
+        text: "As always, food was excellent. ",
+        rating: 5,
+        Hotel_id: GilgalId,
+        user_id: userOpeyemi.id,
+      },
+      {
+        first_name: "Josh",
         last_name: "Adeoye",
-          text: "Not bad.The atmosphere is great",
-          rating: 5,
-          Hotel_id: MondeestarId,
-          user_id: userJosh.id,
-        },
-        {
-          first_name: "Yemi",
-          last_name: "James",
-          text: "Good good good!",
-          rating: 4,
-          Hotel_id: AyaakayeId,
-          user_id: userYemi.id,
-        },
-      ],
-    });
+        text: "Nice place to go to",
+        rating: 3,
+        Hotel_id: VictorialId,
+        user_id: userJosh.id,
+      },
+      {
+        first_name: "Yemi",
+        last_name: "James",
+        text: "very cozy",
+        rating: 4,
+        Hotel_id: TranscorpId,
+        user_id: userYemi.id,
+      },
+      {
+        first_name: "Opeyemi",
+        last_name: "Omotayo",
+        text: "i love the room service",
+        rating: 5,
+        Hotel_id: BestId,
+        user_id: userOpeyemi.id,
+      },
+      {
+        first_name: "Josh",
+        last_name: "Adeoye",
+        text: "Had a great time there",
+        rating: 3,
+        Hotel_id: DestinationId,
+        user_id: userJosh.id,
+      },
+      {
+        first_name: "Yemi",
+        last_name: "James",
+        text: "Not bad",
+        rating: 3,
+        Hotel_id: AveonId,
+        user_id: userYemi.id,
+      },
+      {
+        first_name: "Opeyemi",
+        last_name: "Omotayo",
+        text: "Wonderful food and service.",
+        rating: 5,
+        Hotel_id: MayFairId,
+        user_id: userOpeyemi.id,
+      },
+      {
+        first_name: "Josh",
+        last_name: "Adeoye",
+        text: "Great staff, great room service. ",
+        rating: 5,
+        Hotel_id: ESuiteId,
+        user_id: userJosh.id,
+      },
+      {
+        first_name: "Yemi",
+        last_name: "James",
+        text: "Wonderful service! Delicious food! Comfortable seating and luxurious atmosphere.",
+        rating: 5,
+        Hotel_id: ResidencyId,
+        user_id: userYemi.id,
+      },
+      {
+        first_name: "Opeyemi",
+        last_name: "Omotayo",
+        text: "Not bad",
+        rating: 4,
+        Hotel_id: TranquilId,
+        user_id: userOpeyemi.id,
+      },
+      {
+        first_name: "Josh",
+        last_name: "Adeoye",
+        text: "This visit was with a friend who had never been here before. She loved it as much as I do. She said it will be our new go to place!",
+        rating: 4,
+        Hotel_id: BONId,
+        user_id: userJosh.id,
+      },
+      {
+        first_name: "Yemi",
+        last_name: "James",
+        text: "Great atmosphere",
+        rating: 5,
+        Hotel_id: AdisHotelId,
+        user_id: userYemi.id,
+      },
+      {
+        first_name: "Opeyemi",
+        last_name: "Omotayo",
+        text: "Very nice evening spent with special family.",
+        rating: 5,
+        Hotel_id: AdisPrimeId,
+        user_id: userOpeyemi.id,
+      },
+      {
+        first_name: "Josh",
+        last_name: "Adeoye",
+        text: "First time, and not the last. Very welcoming. The food was deliscious and service very good. Highly recommend.",
+        rating: 4,
+        Hotel_id: OlympusId,
+        user_id: userJosh.id,
+      },
+      {
+        first_name: "Yemi",
+        last_name: "James",
+        text: "Enjoyed our stay there. Great service and ambience.",
+        rating: 5,
+        Hotel_id: EagleId,
+        user_id: userYemi.id,
+      },
+      {
+        first_name: "Opeyemi",
+        last_name: "Omotayo",
+        text: "We had such a great experience and our server was top notch. ",
+        rating: 4,
+        Hotel_id: UmbrellaId,
+        user_id: userOpeyemi.id,
+      },
+      {
+        first_name: "Josh",
+        last_name: "Adeoye",
+        text: "Not bad.The atmosphere is great",
+        rating: 5,
+        Hotel_id: MondeestarId,
+        user_id: userJosh.id,
+      },
+      {
+        first_name: "Yemi",
+        last_name: "James",
+        text: "Good good good!",
+        rating: 4,
+        Hotel_id: AyaakayeId,
+        user_id: userYemi.id,
+      },
+    ],
+  });
 
-    await prisma.room.createMany({
-      data: [
-        {
+  await prisma.room.createMany({
+    data: [
+      {
         hotel_id: RadissonId,
-        bed: 2
-        },
-        {
-          hotel_id: RadissonId,
-          bed: 2,
-        },
-        {
-          hotel_id: RadissonId,
-          bed: 1,
-        },
-      ],
-    });
+        bed: 2,
+      },
+      {
+        hotel_id: RadissonId,
+        bed: 1,
+      },
+      {
+        hotel_id: MorningId,
+        bed: 2,
+      },
+      {
+        hotel_id: MorningId,
+        bed: 1,
+      },
+      {
+        hotel_id: LagosId,
+        bed: 2,
+      },
+      {
+        hotel_id: LagosId,
+        bed: 1,
+      },
+      {
+        hotel_id: ExclusiveId,
+        bed: 2,
+      },
+      {
+        hotel_id: ExclusiveId,
+        bed: 1,
+      },
+      {
+        hotel_id: FourId,
+        bed: 2,
+      },
+      {
+        hotel_id: FourId,
+        bed: 1,
+      },
+      {
+        hotel_id: NordicId,
+        bed: 2,
+      },
+      {
+        hotel_id: NordicId,
+        bed: 1,
+      },
+      {
+        hotel_id: GilgalId,
+        bed: 2,
+      },
+      {
+        hotel_id: GilgalId,
+        bed: 1,
+      },
+      {
+        hotel_id: VictorialId,
+        bed: 2,
+      },
+      {
+        hotel_id: VictorialId,
+        bed: 1,
+      },
+      {
+        hotel_id: TranscorpId,
+        bed: 2,
+      },
+      {
+        hotel_id: TranscorpId,
+        bed: 1,
+      },
+      {
+        hotel_id: BestId,
+        bed: 2,
+      },
+      {
+        hotel_id: BestId,
+        bed: 1,
+      },
+      {
+        hotel_id: DestinationId,
+        bed: 2,
+      },
+      {
+        hotel_id: DestinationId,
+        bed: 1,
+      },
+      {
+        hotel_id: AveonId,
+        bed: 2,
+      },
+      {
+        hotel_id: AveonId,
+        bed: 1,
+      },
+      {
+        hotel_id: MayFairId,
+        bed: 2,
+      },
+      {
+        hotel_id: MayFairId,
+        bed: 1,
+      },
+      {
+        hotel_id: ESuiteId,
+        bed: 2,
+      },
+      {
+        hotel_id: ESuiteId,
+        bed: 1,
+      },
+      {
+        hotel_id: TranquilId,
+        bed: 2,
+      },
+      {
+        hotel_id: TranquilId,
+        bed: 1,
+      },
+      {
+        hotel_id: ResidencyId,
+        bed: 2,
+      },
+      {
+        hotel_id: ResidencyId,
+        bed: 1,
+      },
+      {
+        hotel_id: BONId,
+        bed: 2,
+      },
+      {
+        hotel_id: BONId,
+        bed: 1,
+      },
+      {
+        hotel_id: AdisHotelId,
+        bed: 2,
+      },
+      {
+        hotel_id: AdisHotelId,
+        bed: 1,
+      },
+      {
+        hotel_id: AdisPrimeId,
+        bed: 2,
+      },
+      {
+        hotel_id: AdisPrimeId,
+        bed: 1,
+      },
+      {
+        hotel_id: OlympusId,
+        bed: 2,
+      },
+      {
+        hotel_id: OlympusId,
+        bed: 1,
+      },
+      {
+        hotel_id: EagleId,
+        bed: 2,
+      },
+      {
+        hotel_id: EagleId,
+        bed: 1,
+      },
+      {
+        hotel_id: UmbrellaId,
+        bed: 2,
+      },
+      {
+        hotel_id: UmbrellaId,
+        bed: 1,
+      },
+      {
+        hotel_id: MondeestarId,
+        bed: 2,
+      },
+      {
+        hotel_id: MondeestarId,
+        bed: 1,
+      },
+      {
+        hotel_id: AyaakayeId,
+        bed: 2,
+      },
+      {
+        hotel_id: AyaakayeId,
+        bed: 1,
+      },
+    ],
+  });
 
   res.status(200).json({ name: "hello" });
 }

@@ -15,7 +15,7 @@ const NavBar = () => {
     <nav className="flex justify-between p-2 bg-white">
       <Link href="/" className="text-2xl font-bold text-gray-700">
         {" "}
-        Travel-Expert{" "}
+        Travel Expert{" "}
       </Link>
       <div>
         {loading ? null : (

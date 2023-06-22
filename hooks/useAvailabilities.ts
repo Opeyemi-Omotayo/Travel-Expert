@@ -23,7 +23,7 @@ const useAvailabilities = () => {
 
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/hotel/${slug}/availability`,
+        process.env.NEXT_APP_URL +  `/hotel/${slug}/availability`,
         {
           params: {
             day,

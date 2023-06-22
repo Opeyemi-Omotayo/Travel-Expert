@@ -25,7 +25,7 @@ export const findAvailabileRooms = async ({
 
   if (!searchTimes) {
     return res.status(400).json({
-      errorMessage: "Invalid data provided",
+      errorMessage: "Invalid data provided - from available rooms",
     });
   }
 

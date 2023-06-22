@@ -34,7 +34,7 @@ const signup = async (req: NextApiRequest, res: NextApiResponse) => {
     },
     {
       valid: validator.isMobilePhone(phone),
-      errorMessage: "Phone is invalid",
+      errorMessage: "Phone number is invalid",
     },
     {
       valid: validator.isLength(city, {

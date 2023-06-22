@@ -3,23 +3,23 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { times } from "../../../../data";
 import { findAvailabileRooms } from "../../../../services/hotel/findAvailableRooms";
 
-const prisma =  new PrismaClient();
+const prisma = new PrismaClient();
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   if (req.method === "GET") {
-    const { slug, day, time, sizes } = req.query as {
+    const { slug, day, time, size } = req.query as {
       slug: string;
       day: string;
       time: string;
-      sizes: string;
+      size: string;
     };
 
-    if (!day || !time || !sizes) {
+    if (!day || !time || !size) {
       return res.status(400).json({
-        errorMessage: "Invalid data provided",
+        errorMessage: "Invalid data provided -no info",
       });
     }
 
@@ -49,20 +49,22 @@ export default async function handler(
 
     if (!searchTimesWithRooms) {
       return res.status(400).json({
-        errorMessage: "Invalid data provided",
+        errorMessage: "Invalid data provided - no rooms",
       });
     }
 
-    const availabilties = searchTimesWithRooms.map(t => {
-      const sumSeats = t.rooms.reduce((sum, room) => {
-        return sum + room.bed;
-      }, 0);
+    const availabilities = searchTimesWithRooms
+      .map((t) => {
+        const sumSeats = t.rooms.reduce((sum, room) => {
+          return sum + room.bed;
+        }, 0);
 
-      return {
-        time:t.time,
-        available: sumSeats >= parseInt(sizes)
-      }
-    }).filter((availability) => {
+        return {
+          time: t.time,
+          available: sumSeats >= parseInt(size),
+        };
+      })
+      .filter((availability) => {
         const timeIsAfterOpeningHour =
           new Date(`${day}T${availability.time}`) >=
           new Date(`${day}T${hotel.open_time}`);
@@ -72,9 +74,7 @@ export default async function handler(
 
         return timeIsAfterOpeningHour && timeIsBeforeClosingHour;
       });
-    
 
-    return res.json({availabilties});
+    return res.json(availabilities);
   }
 }
-

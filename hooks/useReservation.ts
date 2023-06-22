@@ -32,7 +32,7 @@ export default function useReservation() {
 
     try {
       const response = await axios.post(
-        `http://localhost:3000/api/restaurant/${slug}/reserve`,
+        process.env.NEXT_APP_URL + `/hotel/${slug}/reserve`,
         {
           bookerFirstName,
           bookerLastName,
@@ -53,6 +53,7 @@ export default function useReservation() {
       setDidBook(true);
       return response.data;
     } catch (error: any) {
+      console.log(error);
       setLoading(false);
       setError(error.response.data.errorMessage);
     }

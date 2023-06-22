@@ -37,7 +37,7 @@ export default async function Home() {
 
   console.log({ hotels });
   return (
-    <main>
+    <main className="bg-gray-50">
       <Header />
       <div className="flex flex-wrap justify-center py-3 mt-10 px-36">
         {hotels.map((hotel) => (

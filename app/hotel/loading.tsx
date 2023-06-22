@@ -10,7 +10,7 @@ const loading = () => {
         <div className="bg-white w-[70%] rounded p-3 shadow">
           <nav className="flex pb-2 border-b text-reg">
             <h4 className="mr-7">Overview</h4>
-            <p className="mr-7">Menu</p>
+            <p className="mr-7">Rooms</p>
           </nav>
 
           <div className="mt-4 border-b pb-6 animate-pulse bg-slate-200 w-[400px] h-16 rounded"></div>
