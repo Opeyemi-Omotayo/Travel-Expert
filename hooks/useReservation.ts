@@ -53,7 +53,6 @@ export default function useReservation() {
       setDidBook(true);
       return response.data;
     } catch (error: any) {
-      console.log(error);
       setLoading(false);
       setError(error.response.data.errorMessage);
     }

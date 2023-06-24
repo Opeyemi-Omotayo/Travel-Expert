@@ -6,7 +6,6 @@ const middleware = async (req: NextRequest, res: NextResponse) => {
   const bearerToken = req.headers.get("authorization") as String;
 
   if (!bearerToken) {
-    //return res.status(401).json({ errorMessage: "Unauthorized!" });
     return new NextResponse(JSON.stringify({ errorMessage: "Unauthorized!" }), {
       status: 401,
     });
@@ -15,7 +14,6 @@ const middleware = async (req: NextRequest, res: NextResponse) => {
   const token = bearerToken.split(" ")[1];
 
   if (!token) {
-    //return res.status(401).json({ errorMessage: "Unauthorized!" });
     return new NextResponse(JSON.stringify({ errorMessage: "Unauthorized!" }), {
       status: 401,
     });
@@ -26,7 +24,6 @@ const middleware = async (req: NextRequest, res: NextResponse) => {
   try {
     await jose.jwtVerify(token, secret);
   } catch (error) {
-    //return res.status(401).json({ errorMessage: "Unauthorized!" });
     return new NextResponse(JSON.stringify({ errorMessage: "Unauthorized!" }), {
       status: 401,
     });

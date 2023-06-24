@@ -69,7 +69,6 @@ const fetchFacilities = async () => {
 
 const SearchPage = async ({ searchParams }: { searchParams: SearchParams }) => {
   const hotel = await fetchHotelByCity(searchParams);
-  console.log(hotel);
   const location = await fetchLocations();
   const Facilities = await fetchFacilities();
   return (

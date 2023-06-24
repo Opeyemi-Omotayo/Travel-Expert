@@ -30,7 +30,6 @@ const fetchHotelServices =async (slug: string) => {
 
 
 const HotelMenuPage = async ({params}: {params: {slug: string}}) => {
-  console.log(params.slug)
   const services = await fetchHotelServices(params.slug);
   return (
     <React.Fragment>

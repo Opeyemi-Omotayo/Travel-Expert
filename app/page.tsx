@@ -35,7 +35,6 @@ const fetchHotel = async (): Promise<HotelCardType[]> => {
 export default async function Home() {
   const hotels = await fetchHotel();
 
-  console.log({ hotels });
   return (
     <main className="bg-gray-50">
       <Header />
