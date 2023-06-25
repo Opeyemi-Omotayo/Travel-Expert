@@ -32,7 +32,7 @@ export default function useReservation() {
 
     try {
       const response = await axios.post(
-        process.env.NEXT_APP_URL + `/hotel/${slug}/reserve`,
+        process.env.NEXT_APP_URL + `/api/hotel/${slug}/reserve`,
         {
           bookerFirstName,
           bookerLastName,

@@ -22,8 +22,13 @@ const useAvailabilities = () => {
     setLoading(true);
 
     try {
+      let path = process.env.NEXT_APP_URL +  `/api/hotel/${slug}/availability`;
+      console.log(slug, "slug");
+      console.log(process.env.NEXT_APP_URL, "my url");
+      console.log(path, "my path");
+
       const response = await axios.get(
-        process.env.NEXT_APP_URL +  `/hotel/${slug}/availability`,
+        path,
         {
           params: {
             day,
