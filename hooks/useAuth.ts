@@ -23,7 +23,7 @@ const useAuth = () => {
     });
     try {
       const response = await axios.post(
-        process.env.NEXT_APP_URL + "/api/auth/signin",
+        process.env.NEXT_PUBLIC_URL + "/api/auth/signin",
         {
           email,
           password,
@@ -68,7 +68,7 @@ const useAuth = () => {
     });
     try {
       const response = await axios.post(
-        process.env.NEXT_APP_URL + "/api/auth/signup",
+        process.env.NEXT_PUBLIC_URL + "/api/auth/signup",
         {
           email,
           password,
