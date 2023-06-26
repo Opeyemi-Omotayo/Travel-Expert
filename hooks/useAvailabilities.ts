@@ -24,7 +24,7 @@ const useAvailabilities = () => {
     try {
 
       const response = await axios.get(
-        process.env.NEXT_PUBLIC_URL +  `/api/hotel/${slug}/availability`,
+        process.env.NEXT_PUBLIC_URL +  `api/hotel/${slug}/availability`,
         {
           params: {
             day,
