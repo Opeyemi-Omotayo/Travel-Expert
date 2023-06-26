@@ -12,14 +12,10 @@ import { Items } from "@prisma/client";
 
 export default function ReservationCard({
   openTime,
-  closeTime,
   slug,
-  items,
 }: {
   openTime: string;
-  closeTime: string;
   slug: string;
-  items: Items[];
 }) {
   const { data, loading, error, fetchAvailabilities } = useAvailabilities();
   const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());

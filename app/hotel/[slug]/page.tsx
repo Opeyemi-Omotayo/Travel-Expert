@@ -19,8 +19,6 @@ interface Hotel {
   description: string;
   slug: string;
   open_time: string;
-  close_time: string;
-  items: Items[];
   review: Review[]
 }
 
@@ -37,8 +35,6 @@ const fetchHotelBySlug = async (slug: string): Promise<Hotel> => {
       slug: true,
       review: true,
       open_time: true,
-      close_time: true,
-      items: true,
         },
   });
 
@@ -68,7 +64,7 @@ const HotelDetailsPage = async ({
           <Reviews review={hotel.review}/>
         </div>
         <div className="w-[27%] relative text-reg">
-          <ReservationCard  openTime={hotel.open_time}  slug={hotel.slug} closeTime={hotel.close_time} items={hotel.items}/>
+          <ReservationCard  openTime={hotel.open_time}  slug={hotel.slug}/>
         </div>
       </div>
     </React.Fragment>
