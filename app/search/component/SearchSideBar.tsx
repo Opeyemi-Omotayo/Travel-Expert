@@ -1,6 +1,7 @@
 import {Facilities, Location, PRICE } from "@prisma/client";
 import Link from "next/link";
-import React from "react";
+import React, { useCallback } from "react";
+
 
 const SearchSideBar = ({
   locations,
@@ -11,6 +12,7 @@ const SearchSideBar = ({
   Facilities: Facilities[];
   searchParams: { city?: string, Facilities?: string  , price?: PRICE };
 }) => {
+  
   return (
     <div className="w-1/5">
       <div className="flex flex-col pb-4 border-b">

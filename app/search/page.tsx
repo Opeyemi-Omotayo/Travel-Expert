@@ -67,6 +67,8 @@ const fetchFacilities = async () => {
   return prisma.facilities.findMany();
 };
 
+export const dynamic='force-dynamic';
+
 const SearchPage = async ({ searchParams }: { searchParams: SearchParams }) => {
   const hotel = await fetchHotelByCity(searchParams);
   const location = await fetchLocations();
