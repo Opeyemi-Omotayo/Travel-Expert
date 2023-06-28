@@ -53,8 +53,6 @@ export default function ReservationCard({
 
  
 
-  // const checkOut = new Date().setDate(new Date().getDate() + 1);
-
   return (
     <div className=" w-[97%] bg-white rounded p-3 shadow">
       <div className="pb-2 font-bold text-center border-b">
@@ -126,7 +124,7 @@ export default function ReservationCard({
                 >
                 
                <p className="text-sm font-bold">
-            Exclusive Room
+            Exclusive Room [₦65,000]
              </p> 
                 </Link>
                  <Link 
@@ -135,7 +133,7 @@ export default function ReservationCard({
                >
                
               <p className="text-sm font-bold">
-             Deluxe Room
+             Deluxe Room [₦30,000]
             </p> 
                </Link>
                </> ) : (

@@ -36,6 +36,7 @@ export default function LoginModal({ isSignin }: { isSignin: boolean }) {
   });
 
   const [disabled, setDisabled] = useState(true);
+  const [errors, setErrors] = useState(false);
 
   useEffect(() => {
     if (isSignin) {
@@ -59,6 +60,7 @@ export default function LoginModal({ isSignin }: { isSignin: boolean }) {
   }, [inputs]);
 
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
     setInputs({
       ...inputs,
       [e.target.name]: e.target.value,
@@ -66,13 +68,18 @@ export default function LoginModal({ isSignin }: { isSignin: boolean }) {
   };
 
 
-  const handleClick = () => {
+  const handleClick = (e: any) => {
+    e.preventDefault();
+    
+
     if (isSignin) {
       signin({ email: inputs.email, password: inputs.password }, handleClose);
     } else {
-      signup(inputs, handleClose);
+      signup(inputs,  handleClose);
     }
+    
   };
+
 
   return (
     <div>
@@ -102,18 +109,18 @@ export default function LoginModal({ isSignin }: { isSignin: boolean }) {
                   {error}
                 </Alert>
               ) : null}
-            <div className="uppercase text-center font-bold pb-2 border-b mb-2">
+            <div className="pb-2 mb-2 font-bold text-center uppercase border-b">
               <p className="text-sm">
                 {isSignin ? "Sign In" : "Create Account"}
               </p>
             </div>
             <div className="m-auto">
-              <h2 className="text-2xl text-center font-light">
+              <h2 className="text-2xl font-light text-center">
                 {isSignin ? "Log into your account" : "Create your account"}
               </h2>
             </div>
-            <Input inputs={inputs} handleChangeInput={handleChangeInput} isSignin={isSignin}/>
-            <button className="uppercase bg-red-600 w-full text-white p-3 rounded text-sm mb-5 disabled:bg-gray-400" disabled={disabled} onClick={handleClick}>
+            <Input inputs={inputs} handleChangeInput={handleChangeInput} isSignin={isSignin} />
+            <button className="w-full p-3 mb-5 text-sm text-white uppercase bg-red-600 rounded disabled:bg-gray-400" disabled={disabled} onClick={handleClick}>
               {" "}
               {isSignin ? "Sign In" : "Sign Up"}
             </button>

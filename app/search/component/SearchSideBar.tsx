@@ -53,7 +53,7 @@ const SearchSideBar = ({
               price : PRICE.CHEAP
             }
           }} className="w-full p-2 font-light border rounded-l text-reg">
-            $
+            cheap
           </Link>
           <Link href={{
             pathname:"/search",
@@ -62,7 +62,7 @@ const SearchSideBar = ({
               price: PRICE.REGULAR
             }
           }} className="w-full p-2 font-light border-t border-b border-r text-reg">
-            $$
+            Reg
           </Link>
           <Link href={{
             pathname:"/search",
@@ -71,7 +71,7 @@ const SearchSideBar = ({
               price: PRICE.EXPENSIVE
             }
           }} className="w-full p-2 font-light border-t border-b border-r rounded-r text-reg">
-            $$$
+            Exp
           </Link>
         </div>
       </div>

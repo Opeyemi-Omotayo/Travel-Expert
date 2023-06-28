@@ -12,7 +12,7 @@ const signup = async (req: NextApiRequest, res: NextApiResponse) => {
   const { firstName, lastName, email, phone, city, password } = req.body;
 
   const errors: String[] = [];
-
+  
   const validationSchema = [
     {
       valid: validator.isLength(firstName, {
