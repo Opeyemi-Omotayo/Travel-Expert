@@ -31,7 +31,6 @@ const HotelCard = ({hotel}: Props) => {
              <Price price={hotel.price}/>
               <p>{hotel.location.name}</p>
             </div>
-            <p className="mt-1 text-sm font-bold">Booked 3 times today</p>
           </div>
           </Link>
         </div>
