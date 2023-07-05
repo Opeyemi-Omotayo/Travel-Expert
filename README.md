@@ -9,6 +9,7 @@ A responsive and user-friendly site built with the latest frontend technologies 
 - Typescript
 - Next.js
 - TailwindCSS
+- Postgres
 
 ## Roadmap 🔍
 
